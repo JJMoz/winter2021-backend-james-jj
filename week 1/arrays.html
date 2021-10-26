@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScirpt Arrays</title>
+</head>
+<body>
+
+    <script>
+
+        let aVariable = 1;
+
+// Apiece of data in an array is referred to as an "ELEMENT" or "Array Element"
+        let myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        // Update a value in an Array.
+
+        // Use Square Bracket Notation to access a element in an Array
+        myArray[0] 
+        myArray[4] = 70; // You can update a value in an array with "="
+        myArray[3]; // You can call a specific array element
+        aVariable;
+
+        myArray[15] = 16; 
+
+        console.log(myArray);
+
+        // Basic Array Method.
+        // A "METHOD" IS A A FUNCTION THAT BELONGS TO AN OBJECT (it has a target)
+
+        myArray.push(); // A Value is placed at the very end of the Array.
+        myArray.pop(); // Removes the last value from the Array.
+        myArray.unshift(); // Adds a value to the start of the Array
+        myArray.shift(); // Removes the vlaue at the start of the Array.
+
+        // split() Method creates an Array FROM a String
+        let myString = "Hello There, how are you doing? " ;
+
+        //"split" is for strings "join" is for arrays
+        let myStringArray = myString.split(" ");
+
+        myStringArray.reverse(); // reverses the elements order in an array
+
+       // myStringArray.toString(); 
+       // changes(returns) the array into a string , have to put it in a variable "let"
+        
+        // "join" is for ARRAYS
+       let myUpdatedString = myStringArray.join("+");
+
+
+
+        console.log(myUpdatedString);
+
+
+    </script>
+
+    
+</body>
+</html>

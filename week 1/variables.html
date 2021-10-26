@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Variables </title>
+</head>
+
+<body>
+    <script>
+        console.log("Hellow World!");
+
+//IN JAVASCRIPT USE "let" instead of "var". (use let in all situations)
+
+// This level is the GLOBAL SCOPE
+        var myVariable = 10;
+
+        let myOtherVariable = 11
+
+        {
+            // This level is a LOCAL SCOPE
+            console.log(myOtherVariable);
+ 
+            myVariable;
+            
+            var privateVariable = 100;
+
+            let anActualPrivateVar = 200;
+
+             console.log(anActualPrivateVar);
+        }
+    
+        console.log(privateVariable);
+
+        // CONST VARIABLE (CONSTENT VARIABLE) = can not be changed
+        const cannotBeChanged = 50;
+        console.log(cannotBeChanged);
+        cannotBeChanged = 51;
+       
+    </script>
+
+
+    
+</body>
+</html>

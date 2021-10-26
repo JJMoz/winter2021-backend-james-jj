@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Objects </title>
+</head>
+<body>
+
+    <script>
+
+        let myArray = [1,2,3,4];
+// "{ }" curly braces
+        let myObject = {
+            A: 10, 
+            1: 20, 
+            "second": 30,
+            "bigNumber": 40,
+            "a space" : "yes"
+        };
+            
+            // a JavaScript Object "key" is actually called an Object's PROPERTY};
+
+            //KEY = PROPERTY (call it a property not a key) 
+
+            // VARIABLE IN A OBJECT = A PROPERTY !!!!!
+            // A FUNTION IN A OBJECT = METHOD !!!!!!
+
+
+           // A, 1, second and bigNumber are the "keys" to access the corresponding data
+    
+    // Object can use Square Bracket Notation OR...
+    console.log(myObject["second"])
+    // it can also use Dot Notation. (can not be use for "keys" with a space = syntax error). USED 90% OF TIME
+    console.log(myObject.second);
+    console.log(myObject["a space"]);
+    console.log(myObject.A);
+
+
+    // Comparing Objects
+    // Objects are unique, even if they appear to hold the exact same key/value pairs.
+    let object1 = {
+        "number": 3
+    };
+
+     let object2 = {
+        "number": 3
+    };
+
+    if (object1 == object2) {
+        console.log("These objects are the same!");
+    } else {
+        console.log("These objects are NOT the same")
+    }
+
+    // Copying Objects.... Ed calls it copying I think it is assigning...... called DEEP COPY or DEEP CLONE vs SHALLOW COPY
+
+    let number1 = 1;
+    let number2 = number1;
+    number1 = 100;
+
+    console.log(number2);
+
+    // number2 = 1
+
+    // Doesn't work for objects as you expect them to. OBJECT are not primative data type like numbers strings boolean ect.
+    let objectA = {
+        "number": 1
+    };
+    let objectB = objectA;
+
+    objectA.number = 100;
+
+    console.log(objectB.number);
+
+    //objectB = 100
+
+    </script>
+
+    
+</body>
+</html>
