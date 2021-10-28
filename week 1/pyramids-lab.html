@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Pyramid Builder Lab</title>
+</head>
+<body>
+
+    <script>
+     
+     function pyramidBuilder(pyramidHeight, pyramidCharacter) {
+       
+        let pyramidColumn = "";
+        for (let count = 0; count < pyramidHeight; count++) {
+        pyramidColumn = pyramidColumn + pyramidCharacter;
+        console.log(pyramidColumn);
+        }
+           // -1 runs the loop one less time then pyramidHeight number. ( ie if pyramidHeight is 5 the loo p will run 4 times)
+        for (let count = 0; count < pyramidHeight -1; count++) {
+        //split array by letter
+        let pyramidColumnArray = pyramidColumn.split("");
+        // pop removes the last item in array
+        pyramidColumnArray.pop();
+        // puts the array back together
+        let result = pyramidColumnArray.join("");
+        pyramidColumn = result
+        console.log(result);  
+        }
+     }
+   
+    //calls the random function (= random = 0 to .9~)
+    // heighest number will be 25.9~ and the lowest number will be 2 (0+2)
+     let randomNumber =  Math.floor(Math.random() * 23); + 2;
+    //calls the function (runs all the code in the function)
+     pyramidBuilder(randomNumber, "#")
+
+    </script>
+
+</body>
+</html>

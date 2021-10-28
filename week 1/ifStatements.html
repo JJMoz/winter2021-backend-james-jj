@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript If Statements</title>
+</head>
+<body>
+    
+    <script>
+
+// IF STATEMENTS
+
+        let number = 25;
+    
+        if (number < 50) {
+            console.log(number + " is less than 50"); 
+        } else if (number < 100) {
+                console.log(number + " is between 49 and 100");
+        } else {
+            console.log(number + " is larger than 99");
+        }
+    
+// SWITCH STATEMENTS
+// A switch statement starts with the keyword switch, the value to be cmpared to should be in the parenthesis, and then each case should have a potential match. If it matches it wil execute that code.
+switch (true) {
+    // a CASE is a set of code that executes if the value matches the value in the parenthesis after the SWITCH keyword.
+    case (number < 50): 
+    console.log(number + " is less then 50 (switch) ");
+    break // if it 25 this stops the search/ code
+    case (number < 100):
+    console.log(number + " is less then 49");
+    break // if you do not put break the next line of code will run no matter what
+    default:
+    // Default is similar to "else" in an if statement, where it executes only if the previous cases don't match.
+    console.log(number + " is larger then 99");
+    break
+}
+    
+    </script>
+
+
+
+</body>
+</html>
