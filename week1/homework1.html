@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDA 102 Backend Web Development</title>
+</head>
+<body>
+
+    <label for="number1">Type a number in:</label>
+    <br />
+    <input type="text" id="number1" />
+    <br />
+    <button id="submit">Submit</button>
+    <p id="results"></p>
+    
+    <script>
+
+        document.getElementById("submit").addEventListener("click", function () {
+
+            // The input variable will get the value in the text box when the submit button is pressed. NOTE: The value will always be a string datatype, convert it if needed.
+            let input = document.getElementById("number1").value;
+
+            /* WRITE YOUR CODE BELOW THIS LINE */
+            let inputSplitArray = input.split(".");
+            let wholeNumber = inputSplitArray[0];
+            let decimalNumber = inputSplitArray[1];
+
+            // The output variable will be written below the submit button on the web page.
+            let output = wholeNumber + " Dollars and " + decimalNumber + " Cents. "
+         
+
+
+            /* WRITE YOUR CODE ABOVE THIS LINE */
+
+            document.getElementById("results").innerHTML = output;
+            
+        });
+
+    </script>
+</body>
+</html>
