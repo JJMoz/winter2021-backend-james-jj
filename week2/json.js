@@ -4,7 +4,7 @@ let myObject = {
     num1: 100,
     welcomeString: "Goodmorning",
     inValid: true,
-    // Method
+    // Method (function of a OBJECT) P
     sayHello: function () {
         console.log("Hello");
     }
