@@ -9,6 +9,20 @@
 <body>
 
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, possimus facilis eligendi obcaecati accusantium explicabo itaque aliquam magni. Velit cum soluta similique unde est praesentium voluptatum perspiciatis repellendus atque ipsum.</p>
+
+    <script>
+        //creates a HTTP Request object from 'XMLhttpRequest' method (function) and puts it in a variable 'xhr'
+        let xhr = new XMLHttpRequest();
+        // 'open' is a method. We provide the correct type of Request as well
+        xhr.open("POST", "http://localhost:3000/test", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send("{'message': 'Hello there!'}");
+        xhr.onload = function () {
+            console.log("The server has responded");
+        };
+
+    </script>
+
     
 </body>
 </html>
