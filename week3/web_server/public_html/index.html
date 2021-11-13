@@ -18,7 +18,10 @@
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send('{"message": "Hello there!"}');
         xhr.onload = function () {
+
             console.log("The server has responded");
+            // 'this.responseText' is the porperty of the response object, usually holding a JSON String.
+            console.log(this.responseText);
         };
 
     </script>

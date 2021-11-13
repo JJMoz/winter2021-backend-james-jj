@@ -18,6 +18,7 @@ const port = 3000;
 
 // tells the express/Http what port to use(listen too) 
 http.listen(port);// Common Development Ports: 8080, 3000 = Node
+
 // 'process.env is a Global variable s injected by the Node at runtime for your application to use and it represents the state of the system environment your application is in when it starts. For example, if the system has a PATH variable set, this will be made accessible to you through process.env.PATH which you can use to check where binaries are located and make external calls to them if required.
 //http.listen(process.env.PORT || 80);
 
@@ -35,6 +36,14 @@ app.post("/test", function(request, response){
     // The following code runs when a request is made
     console.log("The front end sends the following: ", request.body);
 
+    let myResponseObject = {
+        response: "Heard you loud and clear!"
+    };
+
     // We send a a response to front-end client  with a Status Code 200 
-    response.sendStatus(200);
+   // response.sendStatus(200);
+
+   // change the 200 message to the variable 'response': of the javascript object 'myResponseObject' The object will be automatically convewrted to a JSON string to the front-end. This also ends the .post() method, similar to the return keyword
+    response.send(myResponseObject);
+
 });

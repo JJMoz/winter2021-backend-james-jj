@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Match Game</title>
+   
+    <script 
+        src="https://code.jquery.com/jquery-3.6.0.min.js" 
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+   
+</head>
+<body>
+    
+    <h1>Match Game VS Web Server</h1>
+
+    <form>
+        <label>First Name</label>
+        <br>
+        <input id="fname" type="text"/>
+        <br>
+        <label>Number Choice Between 1 and 10</label>
+        <br>
+        <input id="number" type="number"/>
+    </form>
+    <br>
+    <button id="submit">Submit Choice</button>
+    <p id="message"></p>
+
+
+    <script>
+        
+        $(document).ready(function(){
+            $("#submit").click(function () {
+// grabs values when submit button is clicked
+                let fnameValue = $("#fname").val();
+                let numberValue = $("#number").val();
+// puts the values in the a variable called 'data' which is a object
+                let data = {
+                    fname: fnameValue,
+                    number: numberValue
+                };
+                //turns fnameValue and numberValue into a string. no need to do cause jQuery .post does it automatically
+                // data = JSON.stringify(data);
+
+                //jQuery post request method
+                $.post("http://localhost:3000/entry",data, function (responseData) {
+                        $("#message").html(responseData.message);
+                });
+            });
+
+        });
+    
+    </script>
+
+
+</body>
+</html>
