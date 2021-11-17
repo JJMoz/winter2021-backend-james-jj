@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Match Game</title>
    
-    <script 
-        src="https://code.jquery.com/jquery-3.6.0.min.js" 
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+  
 
    <style>
        table td {
@@ -44,20 +45,20 @@
 
     <script>
         
-        $(document).ready(function(){
+        $(document).ready(function () {
                 // When the page is fully loaded, we immediately send a request for the history array.
             $.post("http://localhost:3000/inputHistory", {}, function (responseData) {
                 // We pass the array to the writeToTable function
-                writeToTable(responseData.inputHistory);
+                writeToTable(responseData.history); // inputHistory or history? answer history....why? because we put inputHistory into the 'history' property of the dataToSave object????
 
             });
 
-// Listen for a click on the submit buton
+            // Listen for a click on the submit buton
             $("#submit").click(function () {
-// grabs values when submit button is clicked
+                // grabs values when submit button is clicked
                 let fnameValue = $("#fname").val();
                 let numberValue = $("#number").val();
-// puts the values in the a variable called 'data' which is a object
+                // puts the values in the a variable called 'data' which is a object
                 let data = {
                     fname: fnameValue,
                     number: numberValue
@@ -71,11 +72,9 @@
                         // The data that we get from the server will be in this function's parameter, which we called responseData.
                         $("#message").html(responseData.message);
                         // Grab the history array, and send it to the writeToTable function
-                        writeToTable(responseData.inputHistory);                 
-
+                        writeToTable(responseData.history);    // inputHistory or history? answer history....why?     
+                   });
                 });
-            });
-
         });
     // Creates or updates the Previous Entries Table
         function writeToTable(entries) {
@@ -87,9 +86,10 @@
                     <td>Name</td>
                     <td>User Number</td>
                     <td>Winning Number</td>
+                    <td>Status</td>
                     <td>Entry Timestamp (PST)</td>
-                </tr>`
-            );
+                </tr>
+            `);
 
 
             // For each object in the array....

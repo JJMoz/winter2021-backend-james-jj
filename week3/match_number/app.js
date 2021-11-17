@@ -11,9 +11,9 @@ const http = require("http").Server(app);
 // Holds our array of all previous entries made (an entry is represented as an object)
 let inputHistory;
 // Check if we have a file called history.json
-if (fs.existsSync("history.json")) {
+if (fs.existsSync("inputHistory.json")) {
     // If we do, read it and load the string into the data variable
-    let dataFromJsonFile = fs.readFileSync("history.json", "utf-8");
+    let dataFromJsonFile = fs.readFileSync("inputHistory.json", "utf-8");
     // Convert the JSON string inot a JavaScript Object.
     dataFromJsonFile = JSON.parse(dataFromJsonFile);
     // Grab the Array inside of the history property of the JavaScript Object.
@@ -22,7 +22,7 @@ if (fs.existsSync("history.json")) {
     // If we don't have a file called 'history.json' then we start with an empty array.
     inputHistory = [];
 }
-
+console.log(inputHistory);
 
 // BODY-PARSER
 app.use(express.json({strict: false}))
