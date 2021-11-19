@@ -27,14 +27,14 @@ let entryModel = new mongoose.model("entries", entrySchema);
 const app = express();
 const http = require("http").Server(app);
 
-// Holds our array of all previous entries made (an entry is represented as an object)
+// Holds our array of all previous entries made (an entry is represented as an object). varibles with no " = " equal sign are "undefined".
 let inputHistory;
 
 // BODY-PARSER
 app.use(express.json({strict: false}))
 app.use(express.urlencoded({extended: true}));
 
-const port = 3000;
+const port = process.env.PORT || 80;
 http.listen(port);
 
 console.log("Running Express server on port " + port);
@@ -79,31 +79,30 @@ app.post("/entry", function(request, response){
         if (error) {
             console.log("Failed to save entry to database: ", error);
         } else {
-
-            
-        }
-    });
-
-
-    let message = "";
-// Store a specific message inside of results variable, based on wether we matched the number or not
+            let message = "";
+           
+            // Store a specific message inside of results variable, based on wether we matched the number or not
     if (serverNumber == dataFromFrontEnd.number) {
         message = "Congrats, you guessed the correct number!";
-    }else {
+    } else {
         message = "Sorry your number did not match, the number was " + serverNumber;
-   
-            // packages the responses into an object
+    }
+    // Read all documents from our database, and load them in as objects into our history variable
+    entryModel.find({}, function (error, results) {
+        if (error) {
+            console.log("There was an error searching the database: ", error);
+        } else {history = results;
+    // packages the responses into an object
                 let responseObject = {
                     message: message,
                     history: inputHistory
                 };
             // sends the 'responeObjet' message to the front-end
                 response.send(responseObject);
-     }
+                }
+            });
+
+        }
+    });
+    
 });
-
-
-
-
-
-//mongodb+srv://match_number_user:<lovetocode1>@cluster0.oca0i.mongodb.net/match_number?retryWrites=true&w=majority
