@@ -4,7 +4,9 @@ const mongoose = require("mongoose");
 const credentials = require("./credentialsPWect.js");
 
 // The URL that Mongoose will use to connect to the MongoDB database
+// The URL is stored in the file credentialsPWect.js which we require and call here
 const connectURL = credentials.mongoDbCredentials();
+
 //to test credentials link is working
 console.log(credentials.specialNumber);
 
@@ -20,18 +22,17 @@ mongoose.connect(connectURL, options, function (error) {
     }
 });
 
-// Turns on the Connection
 
 // Object representing the connection
 let database = mongoose.connection; 
-//Turn on the connectio and link any errors by MongoDB to the console automatically
+//Turn on the connection and link any errors by MongoDB to the console automatically
 database.on("error",console.error.bind(console, "We had a MongDB Error."))
 
 // a class.... Copies Promise to mongoose
 mongoose.Promise = global.Promise;
 let Schema = mongoose.Schema;
 
-// Define the schema for your employee collection. the values in the object is wheat is allowed on the MongoDB collection.
+// Define the schema for your employee collection. the values in the object is what is allowed on the MongoDB collection.
 let employeeSchema = new Schema({
     fname: String,
     lname: String,
@@ -85,3 +86,5 @@ employeeModel.findByIdAndDelete("6195581bd8e73d1e3fa165d1", function(error){
         console.log ("Successfully deleted the document");
     }
 });
+
+// Schema = blueprint of how the database is constructed.
