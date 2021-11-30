@@ -1,5 +1,5 @@
 // 'import' keyword bring in the Vehicle Class from the Vehicles.js file.  It allows us to bring specific cariable names(inside curly braces) form a specific file (inside double quotes)
-import {Vehicle} from "./Vehicles.js";
+const Vehicle = require("./Vehicle.js");
 
 
 class Car extends Vehicle {
