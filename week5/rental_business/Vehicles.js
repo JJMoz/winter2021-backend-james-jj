@@ -11,6 +11,7 @@ export class Vehicle {
     }
 }
 
+module.exports = Vehicle;
 
 
 
@@ -18,8 +19,7 @@ export class Vehicle {
 
 
 
-
-
+// use this instead of lodash
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);

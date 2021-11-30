@@ -1,0 +1,11 @@
+{
+  "name": "rental_business",
+  "version": "1.0.0",
+  "description": "rental app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jj",
+  "license": "ISC"
+}
