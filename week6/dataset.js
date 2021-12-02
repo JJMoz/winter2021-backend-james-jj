@@ -12,6 +12,7 @@ if (fs.existsSync("test.csv")) {
         // Create a class based on Column Titles
         class StreetTree {
             constructor() {
+                // Loops through the columnTitles array and creates a property for each of these Array Elements.
                 for (let i = 0; i < columnTitles.length; i++) {
                     this[columnTitles[i]] = null;
                 }
