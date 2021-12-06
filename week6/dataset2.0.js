@@ -103,8 +103,9 @@ if (fs.existsSync(dataFile)) {
 
     // Official answer to question.
     let answerQ1 = `The percentage of sidewalk trees vs other trees in San Francisco is ${(sidewalkTally.sidewalk / (sidewalkTally.sidewalk + sidewalkTally.nonsidewalk)) * 100}%.`;
-// Puts Question 1 answer on Terminal
-  //  console.log(answerQ1);
+    console.log("What is the percentage of sidewalk trees? ")
+    // Puts Question 1 answer on Terminal
+    console.log(answerQ1);
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! QUESTION NUMER 2 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -139,7 +140,7 @@ for (let species in treeSpecies) {
         highestCount = currentSpeciesCount
     }
 }
-
+console.log("Whats the most frequent Tree Species?");
 console.log(`The most frequent tree species for street trees in San Francisco is ${highestSpecies} with  ${highestCount} trees.`);
 
 
@@ -183,7 +184,7 @@ for (let i = 0; i < treeObjects.length; i++) {
 
 
 // From trees that have a plant date, how many were planted in 1955?
-
+console.log("From trees that have a plant date, how many were planted in 1955?");
 console.log(`There were ${dates["1955"]} trees planted in 1955. `);
 
 
@@ -203,5 +204,5 @@ for (let i = 0; i < treeObjects.length; i++) {
 }
 
 // How many trees does DPW take care of?
-
+console.log("How many trees does DPW take care of?");
 console.log(`DPW takes care of ${careTaker["DPW"]} trees.`)
