@@ -37,8 +37,9 @@ if (fs.existsSync(dataFile)) {
         }
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! QUESTION NUMER 1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+ // Hold all of our tree objects in this array.
     treeObjects = [];
-// '-1' after length because there is a empty line at the end of the Street_Tree_List.csv stops the loop at 1 less line
+// '-1' after length because there is a empty line at the end of the Street_Tree_List.csv stops the loop at 1 less line... // Create a StreeTree object for every line in our dataset.
         for (let i = 1; i < dataArray.length-1; i++) {
             let lineArray = dataArray[i].split(",");
 
@@ -56,7 +57,6 @@ if (fs.existsSync(dataFile)) {
         console.log("Cannot find specified file!");
     }
 
-    // What percentage of trees are sidewalk trees?
 
     // Object to hold the tally of all the qSiteInfo properites of ALL trees.
     let treeSite = {};
@@ -101,6 +101,9 @@ if (fs.existsSync(dataFile)) {
 
     console.log(sidewalkTally);
 
+
+    // What percentage of trees are sidewalk trees?
+
     // Official answer to question.
     let answerQ1 = `The percentage of sidewalk trees vs other trees in San Francisco is ${(sidewalkTally.sidewalk / (sidewalkTally.sidewalk + sidewalkTally.nonsidewalk)) * 100}%.`;
     console.log("What is the percentage of sidewalk trees? ")
@@ -111,8 +114,11 @@ if (fs.existsSync(dataFile)) {
 
 //  Whats the most frequent Tree Species?
 
+// Build object to hold all species and count for that species.
 let treeSpecies = {};
 
+
+// Go through each tree object...
 for (let i = 0; i <  treeObjects.length; i++) {
 
     let currentTree = treeObjects[i];
@@ -132,10 +138,12 @@ let highestCount = 0;
 // deletes the one labeled just "Trees" and does not give the Species name
 delete treeSpecies["Tree(s) ::"]
 
+// Loop through all the species in the treeSpecies object.
 for (let species in treeSpecies) {
     let currentSpeciesCount = treeSpecies[species];
-
+    // Compare the current tree species and see if its higher than the current highest count.
     if (highestCount < currentSpeciesCount) { 
+        // If it is, then replace the existing values with the current species. 
         highestSpecies = species;
         highestCount = currentSpeciesCount
     }
@@ -147,28 +155,41 @@ console.log(`The most frequent tree species for street trees in San Francisco is
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! QUESTION NUMER 3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 let dates = {};
+// Track trees that don't have a date.
 let noDateCount = 0;
-
+// Loop through all the tree objects...
 for (let i = 0; i < treeObjects.length; i++) {
     let date = treeObjects[i].PlantDate;
     if (date === "") { 
         noDateCount += 1;
         continue;
     }
+      // Split the date value by spaces. 
+    // EXAMPLE: dateArray = ["04/01/2002", "12:00:00", "AM"]
     let dateArray = date.split(" ");
 
+
+    // Grab the first element of the dateArray.
     let monthdayyear = dateArray[0];
+    // Split this element by its slashes.
     let yearArray = monthdayyear.split("/");
+    // Get the year of the yearArray.
     let year = yearArray[2];
+
 
     // lists the trees planted in 2023
     if (year === "2023") {
         console.log(treeObjects[i])
     }
 
+
+
+    // Look for the specific year in dates object...
     if (dates.hasOwnProperty(year)) {
+         // add a 1 if it exists.
         dates[year] += 1;
     } else {
+            // otherwise create the property and start at 1.
         dates[year] = 1;
     }
 
@@ -192,10 +213,12 @@ console.log(`There were ${dates["1955"]} trees planted in 1955. `);
 
 let careTaker = {};
 
+
+// Loop through all the trees
 for (let i = 0; i < treeObjects.length; i++) {
     let currentTree = treeObjects[i];
     let owner = currentTree.qCaretaker;
-
+    // Check the careTaker object for the current object's qCaretaker value.
     if (careTaker.hasOwnProperty(owner)) {
         careTaker[owner] += 1;
     } else {
