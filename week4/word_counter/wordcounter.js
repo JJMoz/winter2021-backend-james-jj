@@ -1,4 +1,4 @@
-// SETUP  $$$ IT WORKS !!!!!
+// SETUP  $$$ IT WORKS, Yeah !!!!!
 const fs = require("fs");
 const arguments = process.argv;
 const input = arguments[2];
