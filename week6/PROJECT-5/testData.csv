@@ -1,0 +1,10 @@
+facility_id,common_name,address,city,zip_code,block_lot,owned_leased,dept_id_for_jurisdiction,jurisdiction,gross_sq_ft,longitude,latitude,supervisor_district,city_tenants,land_id
+697,Fire Station #15,1000 Ocean Ave,San Francisco,94112,3180001,Own,38,Fire Department,12138,-122.45292662899999,37.72348863100001,7,,588
+2,Hamilton Family Residence,260 Golden Gate Ave,San Francisco,94102,0345007,Own,45,Police Department,50000,-122.41497389900002,37.782010680999974,6,,332
+685,Fire Chief's Residence,870 Bush St,San Francisco,94108,0274010,Own,38,Fire Department,4500,-122.41159217900002,37.789999240999975,3,,333
+3269,Palo Alto/Marview Comm Facility,Palo Alto Ave and Marview Way,San Francisco,94114,2719C023,Own,38,Fire Department,,-122.44977236300002,37.756661638000026,7,,52
+707,Fire Station #24,100 Hoffman Ave,San Francisco,94114,2801001,Own,38,Fire Department,7600,-122.44110498100002,37.753129349000005,8,,340
+150,AWSS Pipeyard (behind 2245 Jerrold),2245 JERROLD AVE,San Francisco,94124,5286A021,Own,38,Fire Department,6400,-122.40164054500002,37.744633410999995,10,,1236
+723,Fire Station #40,2155 18th Ave,San Francisco,94116,2199003,Own,38,Fire Department,7350,-122.47526939800002,37.74761093799998,7,,318
+692,Fire Station #10,655 Presidio Ave,San Francisco,94115,1032001,Own,38,Fire Department,14300,-122.44672328899998,37.78562525799998,2,,3
+728,Fire Station #48,800 Avenue I,San Francisco,94130,1939026,Own,38,Fire Department,18000,-122.36921098200003,37.826668300999984,6,,1041

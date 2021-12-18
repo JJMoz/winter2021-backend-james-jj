@@ -35,7 +35,6 @@ if (fs.existsSync(dataFile)) {
                 }
             }
         }
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! QUESTION NUMER 1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
  // Hold all of our tree objects in this array.
     treeObjects = [];
@@ -57,6 +56,7 @@ if (fs.existsSync(dataFile)) {
         console.log("Cannot find specified file!");
     }
 
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! QUESTION NUMER 1 !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
     // Object to hold the tally of all the qSiteInfo properites of ALL trees.
     let treeSite = {};
@@ -229,3 +229,9 @@ for (let i = 0; i < treeObjects.length; i++) {
 // How many trees does DPW take care of?
 console.log("How many trees does DPW take care of?");
 console.log(`DPW takes care of ${careTaker["DPW"]} trees.`)
+
+
+
+
+
+
